@@ -1,0 +1,16 @@
+C:\Users\victo\source\repos\supermarket\supermarket\bin\Debug\net6.0-windows\supermarket.exe
+C:\Users\victo\source\repos\supermarket\supermarket\bin\Debug\net6.0-windows\supermarket.deps.json
+C:\Users\victo\source\repos\supermarket\supermarket\bin\Debug\net6.0-windows\supermarket.runtimeconfig.json
+C:\Users\victo\source\repos\supermarket\supermarket\bin\Debug\net6.0-windows\supermarket.dll
+C:\Users\victo\source\repos\supermarket\supermarket\bin\Debug\net6.0-windows\supermarket.pdb
+C:\Users\victo\source\repos\supermarket\supermarket\obj\Debug\net6.0-windows\supermarket.Form1.resources
+C:\Users\victo\source\repos\supermarket\supermarket\obj\Debug\net6.0-windows\supermarket.csproj.GenerateResource.cache
+C:\Users\victo\source\repos\supermarket\supermarket\obj\Debug\net6.0-windows\supermarket.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\victo\source\repos\supermarket\supermarket\obj\Debug\net6.0-windows\supermarket.AssemblyInfoInputs.cache
+C:\Users\victo\source\repos\supermarket\supermarket\obj\Debug\net6.0-windows\supermarket.AssemblyInfo.cs
+C:\Users\victo\source\repos\supermarket\supermarket\obj\Debug\net6.0-windows\supermarket.csproj.CoreCompileInputs.cache
+C:\Users\victo\source\repos\supermarket\supermarket\obj\Debug\net6.0-windows\supermarket.dll
+C:\Users\victo\source\repos\supermarket\supermarket\obj\Debug\net6.0-windows\refint\supermarket.dll
+C:\Users\victo\source\repos\supermarket\supermarket\obj\Debug\net6.0-windows\supermarket.pdb
+C:\Users\victo\source\repos\supermarket\supermarket\obj\Debug\net6.0-windows\supermarket.genruntimeconfig.cache
+C:\Users\victo\source\repos\supermarket\supermarket\obj\Debug\net6.0-windows\ref\supermarket.dll
