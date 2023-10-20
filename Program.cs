@@ -1,4 +1,8 @@
 using supermarket.Views;
+using supermarket.Models;
+using supermarket.Repositories;
+using supermarket.Properties;
+using supermarket.Presenters;
 
 namespace supermarket
 {
@@ -13,7 +17,11 @@ namespace supermarket
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new PayModeView());
+            string sqlConnection = Settings.Default.SqlConnection;
+            IPayModeView view = new PayModeView();
+            IPayModeRepository repository = new PayModeRepository(sqlConnection);
+            new PayModePresenter(view, repository);
+            Application.Run((Form) view );
         }
     }
 }
