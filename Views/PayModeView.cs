@@ -22,7 +22,7 @@ namespace supermarket.Views
             InitializeComponent();
             AssociateAndRaiseViewEvents();
 
-            
+
             BtnClose.Click += delegate { this.Close(); };
         }
 
@@ -31,7 +31,54 @@ namespace supermarket.Views
             BtnSearch.Click += delegate { SearchEvent?.Invoke(this, EventArgs.Empty); };
             TxtSearch.KeyDown += (s, e) =>
             {
-                SearchEvent?.Invoke(this, EventArgs.Empty);
+                if (e.KeyCode == Keys.Enter)
+                    SearchEvent?.Invoke(this, EventArgs.Empty);
+            };
+            BtnNew.Click += delegate
+            {
+                AddNewEvent?.Invoke(this, EventArgs.Empty);
+
+                tabPage.TabPages.Remove(tabPagePayModeList);
+                tabPage.TabPages.Add(tabPageModeDetail);
+                tabPageModeDetail.Text = "Add new Pay mode";
+            };
+
+            BtnEdit.Click += delegate { 
+                EditEvent?.Invoke(this, EventArgs.Empty);
+
+                tabPage.TabPages.Remove(tabPagePayModeList);
+                tabPage.TabPages.Add(tabPageModeDetail);
+                tabPageModeDetail.Text = "Edit Pay Mode";
+            };
+            BtnDelete.Click += delegate { 
+       
+                var result = MessageBox.Show(
+                    "Are sure you want to delete the selected Pay Mode",
+                    "Warning",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                if(result == DialogResult.Yes)
+                {
+                    DeleteEvent?.Invoke(this, EventArgs.Empty);
+                    MessageBox.Show(Message);
+                }
+            };
+            BtnSave.Click += delegate { 
+                SaveEvent?.Invoke(this, EventArgs.Empty);
+
+                if (isSuccessful)
+                {
+                    tabPage.TabPages.Remove(tabPageModeDetail);
+                    tabPage.TabPages.Add(tabPagePayModeList);
+                }
+                MessageBox.Show(Message);
+            };
+            BtnCancel.Click += delegate { 
+                CancelEvent?.Invoke(this, EventArgs.Empty);
+
+                tabPage.TabPages.Remove(tabPageModeDetail);
+                tabPage.TabPages.Add(tabPagePayModeList);
+
             };
         }
 
@@ -42,8 +89,8 @@ namespace supermarket.Views
 
         public string PayModelId
         {
-            get { return TxtPayModeId.Text; }
-            set { TxtPayModeId.Text = value; }
+            get { return tabPage.Text; }
+            set { tabPage.Text = value; }
         }
         public string PayModeName
         {
@@ -109,7 +156,7 @@ namespace supermarket.Views
         }
 
         private static PayModeView instance;
- 
+
 
         public static PayModeView GetInstance(Form parentContainer)
         {
@@ -118,14 +165,14 @@ namespace supermarket.Views
                 instance = new PayModeView();
                 instance.MdiParent = parentContainer;
 
-                instance.FormBorderStyle= FormBorderStyle.None;
+                instance.FormBorderStyle = FormBorderStyle.None;
                 instance.Dock = DockStyle.Fill;
             }
             else
             {
-                if(instance.WindowState == FormWindowState.Minimized)
+                if (instance.WindowState == FormWindowState.Minimized)
                 {
-                    instance.WindowState = FormWindowState.Normal;  
+                    instance.WindowState = FormWindowState.Normal;
                 }
                 instance.BringToFront();
             }

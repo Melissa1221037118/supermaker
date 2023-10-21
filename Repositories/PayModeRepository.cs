@@ -18,8 +18,48 @@ namespace supermarket.Repositories
         }
         public void Add(PayModeModel payModelModel)
         {
+            using (var connection = new SqlConnection(connectionString))
+            using (var command = new SqlCommand()) {
+                connection.Open();
+                command.Connection = connection;
+                command.CommandText = "UPDATE PayMode SET Pay_Mode_Name =@name, Pay_Mode_Observation = @observation WHERE Pay_Mode_Id = @id";
+                                       
+                command.Parameters.Add("@name", SqlDbType.NVarChar).Value = payModelModel.Name;
+                command.Parameters.Add("@observation", SqlDbType.NVarChar).Value = payModelModel.Observation;
+                command.Parameters.Add("id", SqlDbType.Int).Value = payModelModel.id;
+                command.ExecuteNonQuery();
+            }      
+        }
+        
+        public void Delete(int id)
+        {
+            using (var connection = new SqlConnection(connectionString))
+            using (var command = new SqlCommand())
+            {
+                connection.Open();
+                command.Connection = connection;
+                command.CommandText = "DELETE FROM PayMode WHERE Pay_Mode_Id = @id";
+
+                command.Parameters.Add("id", SqlDbType.Int).Value = id;
+                command.ExecuteNonQuery();
+            }
+        }
+
+        public void Edit(PayModeModel payModelModel)
+        {
             throw new NotImplementedException();
         }
+
+        public IEnumerable<PayModeModel> GetAll()
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<PayModeModel> GetByValue(string value)
+        {
+            throw new NotImplementedException();
+        }
+    }
 
         public void Delete(int id)
         {
@@ -27,6 +67,11 @@ namespace supermarket.Repositories
         }
 
         public void Edi(PayModeModel payModelModel)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Edit(PayModeModel payModelModel)
         {
             throw new NotImplementedException();
         }

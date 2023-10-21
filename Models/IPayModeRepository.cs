@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Data.SqlClient;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,7 +10,7 @@ namespace supermarket.Models
     internal interface IPayModeRepository
     {
         void Add(PayModeModel payModelModel);
-        void Edi(PayModeModel payModelModel);
+        void Edit(PayModeModel payModelModel);
         void Delete(int id);
 
         IEnumerable<PayModeModel> GetAll();

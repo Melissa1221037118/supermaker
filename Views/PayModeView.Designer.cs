@@ -30,8 +30,8 @@
         {
             panel1 = new Panel();
             label1 = new Label();
-            TxtPayModeId = new TabControl();
-            tabControl1 = new TabPage();
+            tabPage = new TabControl();
+            tabPagePayModeList = new TabPage();
             BtnClose = new Button();
             BtnDelete = new Button();
             BtnEdit = new Button();
@@ -40,7 +40,7 @@
             BtnSearch = new Button();
             TxtSearch = new TextBox();
             label2 = new Label();
-            tabPage2 = new TabPage();
+            tabPageModeDetail = new TabPage();
             BtnCancel = new Button();
             BtnSave = new Button();
             TxtPayModeObservation = new TextBox();
@@ -50,10 +50,10 @@
             TxtPayModelId = new TextBox();
             label3 = new Label();
             panel1.SuspendLayout();
-            TxtPayModeId.SuspendLayout();
-            tabControl1.SuspendLayout();
+            tabPage.SuspendLayout();
+            tabPagePayModeList.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)DgPayMode).BeginInit();
-            tabPage2.SuspendLayout();
+            tabPageModeDetail.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -75,34 +75,34 @@
             label1.Text = "Pay Mode";
             label1.Click += label1_Click;
             // 
-            // TxtPayModeId
+            // tabPage
             // 
-            TxtPayModeId.Controls.Add(tabControl1);
-            TxtPayModeId.Controls.Add(tabPage2);
-            TxtPayModeId.Dock = DockStyle.Fill;
-            TxtPayModeId.Location = new Point(0, 100);
-            TxtPayModeId.Name = "TxtPayModeId";
-            TxtPayModeId.SelectedIndex = 0;
-            TxtPayModeId.Size = new Size(800, 350);
-            TxtPayModeId.TabIndex = 1;
+            tabPage.Controls.Add(tabPagePayModeList);
+            tabPage.Controls.Add(tabPageModeDetail);
+            tabPage.Dock = DockStyle.Fill;
+            tabPage.Location = new Point(0, 100);
+            tabPage.Name = "tabPage";
+            tabPage.SelectedIndex = 0;
+            tabPage.Size = new Size(800, 350);
+            tabPage.TabIndex = 1;
             // 
-            // tabControl1
+            // tabPagePayModeList
             // 
-            tabControl1.Controls.Add(BtnClose);
-            tabControl1.Controls.Add(BtnDelete);
-            tabControl1.Controls.Add(BtnEdit);
-            tabControl1.Controls.Add(BtnNew);
-            tabControl1.Controls.Add(DgPayMode);
-            tabControl1.Controls.Add(BtnSearch);
-            tabControl1.Controls.Add(TxtSearch);
-            tabControl1.Controls.Add(label2);
-            tabControl1.Location = new Point(4, 24);
-            tabControl1.Name = "tabControl1";
-            tabControl1.Padding = new Padding(3);
-            tabControl1.Size = new Size(792, 322);
-            tabControl1.TabIndex = 0;
-            tabControl1.Text = " Pay Mode List";
-            tabControl1.UseVisualStyleBackColor = true;
+            tabPagePayModeList.Controls.Add(BtnClose);
+            tabPagePayModeList.Controls.Add(BtnDelete);
+            tabPagePayModeList.Controls.Add(BtnEdit);
+            tabPagePayModeList.Controls.Add(BtnNew);
+            tabPagePayModeList.Controls.Add(DgPayMode);
+            tabPagePayModeList.Controls.Add(BtnSearch);
+            tabPagePayModeList.Controls.Add(TxtSearch);
+            tabPagePayModeList.Controls.Add(label2);
+            tabPagePayModeList.Location = new Point(4, 24);
+            tabPagePayModeList.Name = "tabPagePayModeList";
+            tabPagePayModeList.Padding = new Padding(3);
+            tabPagePayModeList.Size = new Size(792, 322);
+            tabPagePayModeList.TabIndex = 0;
+            tabPagePayModeList.Text = " tabPage1";
+            tabPagePayModeList.UseVisualStyleBackColor = true;
             // 
             // BtnClose
             // 
@@ -175,23 +175,23 @@
             label2.TabIndex = 0;
             label2.Text = "Search Pay Mode";
             // 
-            // tabPage2
+            // tabPageModeDetail
             // 
-            tabPage2.Controls.Add(BtnCancel);
-            tabPage2.Controls.Add(BtnSave);
-            tabPage2.Controls.Add(TxtPayModeObservation);
-            tabPage2.Controls.Add(label5);
-            tabPage2.Controls.Add(TxtPayModeName);
-            tabPage2.Controls.Add(label4);
-            tabPage2.Controls.Add(TxtPayModelId);
-            tabPage2.Controls.Add(label3);
-            tabPage2.Location = new Point(4, 24);
-            tabPage2.Name = "tabPage2";
-            tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(792, 322);
-            tabPage2.TabIndex = 1;
-            tabPage2.Text = " Pay Mode Detail";
-            tabPage2.UseVisualStyleBackColor = true;
+            tabPageModeDetail.Controls.Add(BtnCancel);
+            tabPageModeDetail.Controls.Add(BtnSave);
+            tabPageModeDetail.Controls.Add(TxtPayModeObservation);
+            tabPageModeDetail.Controls.Add(label5);
+            tabPageModeDetail.Controls.Add(TxtPayModeName);
+            tabPageModeDetail.Controls.Add(label4);
+            tabPageModeDetail.Controls.Add(TxtPayModelId);
+            tabPageModeDetail.Controls.Add(label3);
+            tabPageModeDetail.Location = new Point(4, 24);
+            tabPageModeDetail.Name = "tabPageModeDetail";
+            tabPageModeDetail.Padding = new Padding(3);
+            tabPageModeDetail.Size = new Size(792, 322);
+            tabPageModeDetail.TabIndex = 1;
+            tabPageModeDetail.Text = " Pay Mode Detail";
+            tabPageModeDetail.UseVisualStyleBackColor = true;
             // 
             // BtnCancel
             // 
@@ -270,18 +270,18 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(TxtPayModeId);
+            Controls.Add(tabPage);
             Controls.Add(panel1);
             Name = "PayModeView";
             Text = "PayModeView";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            TxtPayModeId.ResumeLayout(false);
-            tabControl1.ResumeLayout(false);
-            tabControl1.PerformLayout();
+            tabPage.ResumeLayout(false);
+            tabPagePayModeList.ResumeLayout(false);
+            tabPagePayModeList.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)DgPayMode).EndInit();
-            tabPage2.ResumeLayout(false);
-            tabPage2.PerformLayout();
+            tabPageModeDetail.ResumeLayout(false);
+            tabPageModeDetail.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -289,9 +289,9 @@
 
         private Panel panel1;
         private Label label1;
-        private TabControl TxtPayModeId;
-        private TabPage tabControl1;
-        private TabPage tabPage2;
+        private TabControl tabPage;
+        private TabPage tabPagePayModeList;
+        private TabPage tabPageModeDetail;
         private Button BtnSearch;
         private TextBox TxtSearch;
         private Label label2;
