@@ -22,11 +22,10 @@ namespace supermarket.Repositories
             using (var command = new SqlCommand()) {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = "UPDATE PayMode SET Pay_Mode_Name =@name, Pay_Mode_Observation = @observation WHERE Pay_Mode_Id = @id";
+                command.CommandText = "INSERT INTO PayMode VALUES (@name, @obesvation)";
                                        
                 command.Parameters.Add("@name", SqlDbType.NVarChar).Value = payModelModel.Name;
                 command.Parameters.Add("@observation", SqlDbType.NVarChar).Value = payModelModel.Observation;
-                command.Parameters.Add("id", SqlDbType.Int).Value = payModelModel.id;
                 command.ExecuteNonQuery();
             }      
         }
@@ -47,33 +46,18 @@ namespace supermarket.Repositories
 
         public void Edit(PayModeModel payModelModel)
         {
-            throw new NotImplementedException();
-        }
+            using (var connection = new SqlConnection(connectionString))
+            using (var command = new SqlCommand())
+            {
+                connection.Open();
+                command.Connection = connection;
+                command.CommandText = "UPDATE PayMode SET Pay_Mode_Name =@name, Pay_Mode_Observation = @observation WHERE Pay_Mode_Id = @id";
 
-        public IEnumerable<PayModeModel> GetAll()
-        {
-            throw new NotImplementedException();
-        }
-
-        public IEnumerable<PayModeModel> GetByValue(string value)
-        {
-            throw new NotImplementedException();
-        }
-    }
-
-        public void Delete(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Edi(PayModeModel payModelModel)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Edit(PayModeModel payModelModel)
-        {
-            throw new NotImplementedException();
+                command.Parameters.Add("@name", SqlDbType.NVarChar).Value = payModelModel.Name;
+                command.Parameters.Add("@observation", SqlDbType.NVarChar).Value = payModelModel.Observation;
+                command.Parameters.Add("id", SqlDbType.Int).Value = payModelModel.id;
+                command.ExecuteNonQuery();
+            }
         }
 
         public IEnumerable<PayModeModel> GetAll()
