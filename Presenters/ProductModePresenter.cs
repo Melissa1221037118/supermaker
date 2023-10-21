@@ -59,7 +59,7 @@ namespace supermarket.Presenters
         {
             try
             {
-                var productMode = (ProductModel)payModeBProductModeBingingSourceingingSource.Current;
+                var productMode = (ProductModel)ProductModeBingingSource.Current;
 
                 repository.Delete(productMode.id);
                 view.IsSuccessful = true;
