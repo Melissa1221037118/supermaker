@@ -25,7 +25,7 @@ namespace supermarket.Views
             btnClose.Click += delegate { this.Close(); };
         }
 
-
+        
 
         public bool IsEdit
         {
