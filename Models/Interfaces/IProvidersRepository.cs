@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace supermarket.Models.Interfaces
 {
-    internal interface IProvidersView
+    internal interface IProvidersRepository
     {
         string ProvierlId { get; set; }
         string ProvierName { get; set; }
