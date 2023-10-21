@@ -17,8 +17,10 @@ namespace supermarket.Views
         {
             InitializeComponent();
             BtnPayMode.Click += delegate { ShowPayModeView?.Invoke(this, EventArgs.Empty); };
+
+            btnExit.Click += delegate { this.Close(); };
         }
-         
+
         public event EventHandler ShowPayModeView;
         public event EventHandler ShowProductView;
         public event EventHandler ShowCustomerView;

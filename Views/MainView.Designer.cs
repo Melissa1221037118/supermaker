@@ -30,6 +30,7 @@
         {
             label1 = new Label();
             BtnPayMode = new Button();
+            btnExit = new Button();
             SuspendLayout();
             // 
             // label1
@@ -49,11 +50,21 @@
             BtnPayMode.Text = "PayMode";
             BtnPayMode.UseVisualStyleBackColor = true;
             // 
+            // btnExit
+            // 
+            btnExit.Location = new Point(30, 392);
+            btnExit.Name = "btnExit";
+            btnExit.Size = new Size(75, 23);
+            btnExit.TabIndex = 2;
+            btnExit.Text = "exit";
+            btnExit.UseVisualStyleBackColor = true;
+            // 
             // MainView
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnExit);
             Controls.Add(BtnPayMode);
             Controls.Add(label1);
             Name = "MainView";
@@ -66,5 +77,6 @@
 
         private Label label1;
         private Button BtnPayMode;
+        private Button btnExit;
     }
 }
